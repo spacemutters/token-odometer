@@ -1,0 +1,33 @@
+{
+ "files": 42,
+ "messages": 42,
+ "sessions": 42,
+ "projects": 1,
+ "total": 1731136,
+ "parts": {
+  "input": 82,
+  "output": 10080,
+  "cache_write": 587488,
+  "cache_read": 1133486
+ },
+ "busiest_day": [
+  [
+   "2026-09-20",
+   1731136
+  ]
+ ],
+ "days_active": 1,
+ "peak_hour_utc": [
+  [
+   "01",
+   35
+  ]
+ ],
+ "top_model": [
+  [
+   "claude-opus-5",
+   1731136
+  ]
+ ],
+ "bad_lines": 0
+}

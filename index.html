@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Token Odometer</title>
+<meta name="description" content="See every token you've spent in Claude Code on one odometer. Counted in your browser. Nothing is uploaded.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header class="top">
+    <span class="mark" aria-hidden="true"></span>
+    <span class="name">Token Odometer</span>
+  </header>
+
+  <section class="hero" aria-labelledby="hero-title">
+    <p class="eyebrow" id="hero-eyebrow">Claude Code</p>
+    <div class="odometer" id="odometer" role="img" aria-label="0 tokens"></div>
+    <p class="unit" id="unit">tokens</p>
+    <h1 id="hero-title" class="title">How far have you driven Claude?</h1>
+    <p class="lede">Pick your Claude Code history folder and every token in it rolls onto the odometer. It's counted on this computer. This page can't send anything anywhere.</p>
+
+    <div class="actions">
+      <button class="primary" id="pick" type="button">Choose your Claude folder</button>
+      <button class="secondary" id="example" type="button">Show an example</button>
+      <input type="file" id="fallback" webkitdirectory multiple hidden>
+    </div>
+    <details class="where">
+      <summary>Where is the folder?</summary>
+      <dl>
+        <dt>Windows</dt><dd><code>C:\Users\<i>you</i>\.claude\projects</code></dd>
+        <dt>Mac</dt><dd><code>~/.claude/projects</code>. In the picker, press <kbd>⌘</kbd> <kbd>⇧</kbd> <kbd>.</kbd> to show hidden folders.</dd>
+        <dt>Linux</dt><dd><code>~/.claude/projects</code></dd>
+      </dl>
+      <p>Claude Code clears history older than 30 days unless you've changed <code>cleanupPeriodDays</code> in its settings, so the odometer counts what's still on your disk.</p>
+    </details>
+    <p class="status" id="status" aria-live="polite"></p>
+  </section>
+
+  <section class="results" id="results" hidden aria-label="Your numbers">
+    <p class="badge" id="badge" hidden>Example data</p>
+
+    <div class="stats" id="stats"></div>
+
+    <div class="panel">
+      <h2>Where the tokens went</h2>
+      <div class="bar" id="bar" role="img"></div>
+      <ul class="legend" id="legend"></ul>
+      <p class="note">Cache reads are Claude re-reading the conversation it already has. They're usually most of the total.</p>
+    </div>
+
+    <div class="panel">
+      <h2 id="heat-title">The last year</h2>
+      <div class="heat-wrap"><div class="heat" id="heat" role="img"></div></div>
+      <div class="heat-key"><span>Less</span><i data-l="0"></i><i data-l="1"></i><i data-l="2"></i><i data-l="3"></i><i data-l="4"></i><span>More</span></div>
+    </div>
+
+    <p class="compare" id="compare"></p>
+
+    <div class="actions">
+      <button class="primary" id="download" type="button">Download your card</button>
+      <button class="secondary" id="again" type="button">Count another folder</button>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <p>Reads the usage numbers Claude Code saves with every reply. Each reply is counted once. Your files never leave this computer, and the page is built so it can't make network requests.</p>
+  </footer>
+</main>
+<script src="app.js" type="module"></script>
+</body>
+</html>

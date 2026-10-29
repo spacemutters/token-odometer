@@ -1,0 +1,10 @@
+.vercel
+node_modules/
+# launch video work and finished videos (large media)
+brag-output/
+final/
+# real Claude Code transcripts and personal token totals used by the local tests
+tools/fixture/
+tools/real_snapshot.json
+tools/full_count.json
+tools/shots/fixture-*.png
